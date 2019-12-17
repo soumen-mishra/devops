@@ -22,6 +22,7 @@ pipeline {
     stage('Run Script') {
       steps {
         echo 'Executing Shell Script!'
+        chmod +x job.sh
         sh('job.sh')
       }
     }
