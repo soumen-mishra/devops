@@ -1,10 +1,5 @@
 pipeline {
   agent any
-  
-  options {
-    skipDefaultCheckout(true)
-  }
-  
   stages {
     stage('Git Checkout') {
         steps {
@@ -16,6 +11,13 @@ pipeline {
     stage('Demo Stage') {
       steps {
         echo 'Hello world!'
+      }
+    }
+    
+    stage('Run Script') {
+      steps {
+        echo 'Executing Shell Script!'
+        sh('Job.sh')
       }
     }
   }
